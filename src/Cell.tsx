@@ -7,7 +7,7 @@ type CellPropsType = {
 }
 function Cell ({isActive = false, text, isSelect = false, isDefaultBackground = false, onSelect} : CellPropsType) {
     return (
-        <div className={`${isDefaultBackground ? 'bg-slate-200':'bg-white'} flex justify-center items-center border border-teal-200 w-full h-full ${isSelect && "animate-ping"} ${isActive && "bg-teal-100"}`} onClick={onSelect}>
+        <div className={`flex justify-center items-center w-full h-full ${isSelect && "animate-ping"} ${isActive && "bg-teal-100"} ${isDefaultBackground && !isActive ? 'bg-slate-100':'bg-white'}`} onClick={onSelect}>
             {text}
         </div>
     )
