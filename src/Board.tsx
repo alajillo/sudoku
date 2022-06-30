@@ -10,7 +10,7 @@ function Board({cellList, onSelect} : BoardPropsType) {
             {
                 cellList
                 .flatMap((cellRow,rowIndex) => 
-                    cellRow.map((cell,cellIndex)=><Cell key={`${cellIndex}/${rowIndex}`} isActive={cell.isActive} text={cell.text} isSelect={cell.isSelect} isDefaultBackground={cell.isDefaultBackground} onSelect={()=> onSelect(rowIndex,cellIndex) }/>)
+                    cellRow.map((cell,cellIndex)=><Cell key={`${cellIndex}/${rowIndex}`} isActive={cell.isActive} text={cell.text} isSelect={cell.isSelect} isDefaultBackground={cell.isDefaultBackground} isWrong={cell.isWrong} onSelect={()=> onSelect(rowIndex,cellIndex) }/>)
                 )
             }
         </div>

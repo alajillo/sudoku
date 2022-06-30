@@ -1,7 +1,8 @@
 export type CellType = {
-    text : string,
-    isActive : boolean,
-    isSelect : boolean,
+    text : string
+    isActive : boolean
+    isSelect : boolean
+    isWrong : boolean
     isDefaultBackground : boolean
 }
 
@@ -18,6 +19,7 @@ export class Sudoku{
             text : '0',
             isActive : false,
             isSelect : false,
+            isWrong : false,
             isDefaultBackground : this.checkDefaultBackground(row,column)
         }
     }
