@@ -8,7 +8,7 @@ function Input ({onInput} : InputPropsType) {
             {
                 new Array(9).fill(0)
                 .map((_,index) =>
-                <div key={index} className="bg-white flex justify-center items-center text-2xl" onClick={()=>onInput(index)}>
+                <div key={index} className=" shadow-md rounded-md p-2 flex justify-center items-center text-2xl" onClick={()=>onInput(index)}>
                 {index + 1}
             </div>
                 )
