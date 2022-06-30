@@ -6,7 +6,7 @@ type BoardPropsType = {
 }
 function Board({cellList, onSelect} : BoardPropsType) {
     return (
-        <div className="grid gap-1 grid-cols-9 grid-rows-9 w-[400px] h-[400px] m-0">
+        <div className="grid  border border-zinc-800 gap-0 grid-cols-9 grid-rows-9 w-[400px] h-[400px] m-0">
             {
                 cellList
                 .flatMap((cellRow,rowIndex) => 
