@@ -6,7 +6,7 @@ type CellPropsType = {
 }
 function Cell ({isActive = false, text, isSelect = false, onSelect} : CellPropsType) {
     return (
-        <div className={`bg-white flex justify-center items-center border border-teal-200 w-full h-full ${isSelect && "animate-ping"} ${isActive && "bg-teal-200"}`} onClick={onSelect}>
+        <div className={`bg-white flex justify-center items-center border border-teal-200 w-full h-full ${isSelect && "animate-ping"} ${isActive && "bg-teal-100"}`} onClick={onSelect}>
             {text}
         </div>
     )
