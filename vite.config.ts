@@ -12,7 +12,7 @@ export default defineConfig({
     theme_color: '#ffffff',
     icons: [
       {
-        src: './images/android-512-512.png',
+        src: './assets/android-512-512.45935429.png',
         sizes: '512x512',
         type: 'image/png'
       }
