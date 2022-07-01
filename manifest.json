@@ -1,0 +1,15 @@
+{
+    "background_color": "none",
+    "description": "",
+    "dir": "ltr",
+    "display": "fullscreen",
+    "name": "sudoku-inky.vercel",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "sudoku-inky.vercel",
+    "start_url": "/",
+    "theme_color": "none",
+    "categories": [],
+    "screenshots": [],
+    "shortcuts": []
+  }
