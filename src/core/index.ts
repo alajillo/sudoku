@@ -11,10 +11,10 @@ function isMiddle(index : number){
 }
 
 export class Sudoku{
+    private static selectedIndex : number[] = [];
     public static init(){
        const initList = new Array(9).fill(0).map((_,row)=> new Array(9).fill(0).map((_,column) => this.createCell(row,column)))
-       return this.generateProblem(initList,0);
-    // return initList
+       return this.generateProblem(initList,40);
     }
     private static createCell(row : number,column : number) : CellType{
         return {
@@ -26,6 +26,7 @@ export class Sudoku{
         }
     }
     public static selectCell(list : CellType[][], row : number,column : number){
+            this.selectedIndex = [row,column];
             return list.map((rows,rowIndex) => rows.map((cell,columnIndex) => {
                 return {
                     ...cell,
@@ -35,7 +36,7 @@ export class Sudoku{
             }))
     }
     public static inputCell(list : CellType[][], value : number){
-        return list.map((rows) => rows.map((cell) => {
+        const newList =  list.map((rows) => rows.map((cell) => {
             return {
                 ...cell,
                 isSelect : false,
@@ -43,10 +44,29 @@ export class Sudoku{
                 text : cell.isSelect ? String(value) : cell.text
             }
         }))
+        for(let i =0; i < 9; i++){
+            for(let j = 0; j < 9; j++){
+                const temp = newList[i][j].text;
+                newList[i][j].text = 'x';
+                if(!this.isValidLocation({list : newList,row : i, column : j, value : temp})){
+                    newList[i][j].isWrong = true;
+                }else{
+                    newList[i][j].isWrong = false;
+                }
+                newList[i][j].text = temp;
+            }
+    }
+        return newList;
     }
     private static generateProblem(list : CellType[][],level : number){
       const result = [...list];
-      this.solve(result,0,0)
+      this.solve(result,0,0);
+      while(level > 0){
+        level--;
+        const randomRow = Math.floor(Math.random() * 9);
+        const randomColumn = Math.floor(Math.random() * 9);
+        result[randomRow][randomColumn].text = '';
+      }
         return result;
     }
     private static solve(list : CellType[][],row : number,column : number) : boolean{
