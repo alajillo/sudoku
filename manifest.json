@@ -3,13 +3,20 @@
     "description": "",
     "dir": "ltr",
     "display": "fullscreen",
-    "name": "sudoku-inky.vercel",
+    "name": "스도쿠",
     "orientation": "any",
     "scope": "/",
-    "short_name": "sudoku-inky.vercel",
-    "start_url": "/",
+    "short_name": "스도쿠",
+    "start_url": "./index.html",
     "theme_color": "none",
     "categories": [],
     "screenshots": [],
-    "shortcuts": []
+    "shortcuts": [],
+    "icons" : [
+        {
+            "src": "./android-launchericon-512-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+    ]
   }
