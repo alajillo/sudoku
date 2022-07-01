@@ -12,9 +12,9 @@ function isMiddle(index : number){
 
 export class Sudoku{
     private static selectedIndex : number[] = [];
-    public static init(){
+    public static init(level : number){
        const initList = new Array(9).fill(0).map((_,row)=> new Array(9).fill(0).map((_,column) => this.createCell(row,column)))
-       return this.generateProblem(initList,40);
+       return this.generateProblem(initList,level);
     }
     private static createCell(row : number,column : number) : CellType{
         return {
