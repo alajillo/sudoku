@@ -13,7 +13,7 @@ function Board({ cellList, onSelect }: BoardPropsType) {
             height: SCREEN_WIDTH - 10,
             maxWidth: 600,
             maxHeight: 600,
-        }} className="grid  border border-zinc-800 gap-0 grid-cols-9 grid-rows-9 m-0">
+        }} className="grid  border border-zinc-800 gap-0 grid-cols-9 grid-rows-9 mb-8">
             {
                 cellList
                     .flatMap((cellRow, rowIndex) =>

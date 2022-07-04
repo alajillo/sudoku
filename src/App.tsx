@@ -19,8 +19,8 @@ function App() {
     setCellList(newCellList);
   }
   return (
-    <div className="flex flex-col justify-evenly items-center h-full">
-      <h1 className=" text-4xl text-center text-zinc-700 my-0">Sudoku</h1>
+    <div className="flex flex-col items-center h-full">
+      <h1 className=" text-4xl text-center text-zinc-700 my-2">Sudoku</h1>
       <LevelController range={[1, 10]} levelFn={levelChange} />
       <Board cellList={cellList} onSelect={onSelect} />
       <Input onInput={onInput} />
