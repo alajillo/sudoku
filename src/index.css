@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html,body {
+  height : 100vh;
+}
+
+#root {
+  height : 100%;
+}
 
 body {
   touch-action :none;
